@@ -1,0 +1,24 @@
+﻿@model Dictionary<int, string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles{
+    <style>
+        .lista {
+            border-bottom: 1px solid #ddd;
+            padding: 6px;
+        }
+    </style>
+}
+    <div class="text-center">
+        <h1 class="">Usuários cadastrados</h1>
+    </div>
+    <div class="col-10 offset-sm-2" style="margin-top:30px">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 lista"><a href="/Detalhes/@item.Key ">@item.Value</a></div>
+            }
+        </div>
+    </div>
